@@ -44,4 +44,5 @@
 .DS_Store
 *.png~
 
+lib/
 SFML3/
