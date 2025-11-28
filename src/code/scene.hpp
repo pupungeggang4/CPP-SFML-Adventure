@@ -24,9 +24,22 @@ class SceneTitle : public Scene {
 };
 
 class SceneField : public Scene {
+    public:
+        SceneField(shared_ptr<Game>);
+        void loop(shared_ptr<Game>) override;
+        void render(shared_ptr<Game>) override;
+        void mouseUp(shared_ptr<Game>, sf::Vector2i, int) override;
+        void keyDown(shared_ptr<Game>, int) override;
+        void keyUp(shared_ptr<Game>, int) override;
 
 };
 
 class SceneBattle : public Scene {
-
+    public:
+        SceneBattle(shared_ptr<Game>);
+        void loop(shared_ptr<Game>) override;
+        void render(shared_ptr<Game>) override;
+        void mouseUp(shared_ptr<Game>, sf::Vector2i, int) override;
+        void keyDown(shared_ptr<Game>, int) override;
+        void keyUp(shared_ptr<Game>, int) override;
 };

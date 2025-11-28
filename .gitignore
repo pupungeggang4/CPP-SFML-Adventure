@@ -46,3 +46,4 @@
 
 lib/
 SFML3/
+build/
