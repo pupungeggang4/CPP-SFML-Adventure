@@ -6,7 +6,7 @@ Scene::Scene(shared_ptr<Game> game) {
 }
 
 void Scene::loop(shared_ptr<Game> game) {
-
+    
 }
 
 void Scene::render(shared_ptr<Game> game) {

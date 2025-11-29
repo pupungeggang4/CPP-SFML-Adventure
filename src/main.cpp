@@ -1,4 +1,5 @@
 #include "code/general.hpp"
+#include "code/res.hpp"
 #include "code/game.hpp"
 
 int main(int argc, char** argv) {
@@ -6,6 +7,6 @@ int main(int argc, char** argv) {
     shared_ptr<Game> game = make_shared<Game>();
     game->init();
     game->run();
-
+    Res::neodgm.reset();
     return 0;
 }
