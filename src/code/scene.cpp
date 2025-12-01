@@ -13,7 +13,7 @@ void Scene::render(shared_ptr<Game> game) {
 
 }
 
-void Scene::mouseUp(shared_ptr<Game> game, sf::Vector2i pos, int button) {
+void Scene::mouseUp(shared_ptr<Game> game, sf::Vector2f pos, int button) {
 
 }
 

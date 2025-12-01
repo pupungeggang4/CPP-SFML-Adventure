@@ -16,7 +16,7 @@ FetchContent_MakeAvailable(SFML)
 file(GLOB CODE src/code/*.cpp)
 
 # Copying data and assets.
-#file(COPY "${CMAKE_SOURCE_DIR}/src/font" DESTINATION "${CMAKE_BINARY_DIR}/bin")
+file(COPY "${CMAKE_SOURCE_DIR}/src/font" DESTINATION "${CMAKE_BINARY_DIR}/bin")
 #file(COPY "${CMAKE_SOURCE_DIR}/src/image" DESTINATION "${CMAKE_BINARY_DIR}/bin")
 
 # Compile

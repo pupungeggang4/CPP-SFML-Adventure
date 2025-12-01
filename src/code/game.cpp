@@ -11,12 +11,13 @@ Game::Game() {
 
     unsigned int mWidth = sf::VideoMode::getDesktopMode().size.x;
     if (mWidth > 2560) {
-        window = sf::RenderWindow(sf::VideoMode({2560, 1440}), "Adventure Game");
+        width = 2560; height = 1440;
     } else if (mWidth > 1920) {
-        window = sf::RenderWindow(sf::VideoMode({1920, 1080}), "Adventure Game");
+        width = 1920; height = 1080;
     } else {
-        window = sf::RenderWindow(sf::VideoMode({1280, 720}), "Adventure Game");
+        width = 1280; height = 720;
     }
+    window = sf::RenderWindow(sf::VideoMode({width, height}), "Adventure Game");
     window.setFramerateLimit(60);
     viewUI = sf::View({640, 360}, {1280, 720});
     window.setView(viewUI);
@@ -35,7 +36,7 @@ void Game::init() {
 
 // Game main loop
 void Game::run() {
-    while (window.isOpen()) {
+    while (running) {
         frameCurrent = clock.getElapsedTime().asSeconds();
         delta = frameCurrent - framePrevious;
         framePrevious = clock.getElapsedTime().asSeconds();
@@ -87,6 +88,11 @@ void Game::handleInput() {
                 keyPressed["down"] = false;
             }
             scene->keyUp(self, k);
+        }
+        if (const auto* mouseUp = event->getIf<sf::Event::MouseButtonReleased>()) {
+            int button = int(mouseUp->button);
+            sf::Vector2f position = {mouseUp->position.x * 1280.0f / width, mouseUp->position.y * 720.0f / height};
+            scene->mouseUp(self, position, button);
         }
     }
 }
