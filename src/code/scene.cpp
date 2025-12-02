@@ -1,5 +1,5 @@
-#include "scene.hpp"
-#include "game.hpp"
+#include <scene.hpp>
+#include <game.hpp>
 
 Scene::Scene(shared_ptr<Game> game) {
 

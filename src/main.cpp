@@ -1,6 +1,6 @@
-#include "code/general.hpp"
-#include "code/res.hpp"
-#include "code/game.hpp"
+#include <general.hpp>
+#include <res.hpp>
+#include <game.hpp>
 
 int main(int argc, char** argv) {
     sf::err().rdbuf(NULL); 

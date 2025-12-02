@@ -1,7 +1,7 @@
-#include "game.hpp"
-#include "scene.hpp"
-#include "res.hpp"
-#include "field.hpp"
+#include <game.hpp>
+#include <scene.hpp>
+#include <res.hpp>
+#include <field.hpp>
 
 // Loading game system.
 Game::Game() {

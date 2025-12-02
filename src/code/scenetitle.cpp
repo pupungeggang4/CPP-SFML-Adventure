@@ -1,8 +1,8 @@
-#include "scene.hpp"
-#include "ui.hpp"
-#include "func.hpp"
-#include "render.hpp"
-#include "game.hpp"
+#include <scene.hpp>
+#include <ui.hpp>
+#include <func.hpp>
+#include <render.hpp>
+#include <game.hpp>
 
 SceneTitle::SceneTitle(shared_ptr<Game> game) : Scene(game) {
 

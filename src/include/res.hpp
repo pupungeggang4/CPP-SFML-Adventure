@@ -1,5 +1,5 @@
 #pragma once
-#include "general.hpp"
+#include <general.hpp>
 
 class Res {
     public:

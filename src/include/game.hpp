@@ -1,6 +1,6 @@
 #pragma once
-#include "general.hpp"
-#include "res.hpp"
+#include <general.hpp>
+#include <res.hpp>
 
 class Scene;
 class Field;

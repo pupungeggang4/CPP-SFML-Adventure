@@ -1,5 +1,5 @@
-#include "scene.hpp"
-#include "game.hpp"
+#include <scene.hpp>
+#include <game.hpp>
 
 SceneBattle::SceneBattle(shared_ptr<Game> game) : Scene(game) {
 

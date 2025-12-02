@@ -1,4 +1,4 @@
-#include "render.hpp"
+#include <render.hpp>
 
 void Render::renderText(sf::RenderTarget& rt, sf::Text& t, std::vector<float> pos, sf::String text) {
     t.setString(text);
