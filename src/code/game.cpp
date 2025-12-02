@@ -5,10 +5,6 @@
 
 // Loading game system.
 Game::Game() {
-    rFont = *(Res::neodgm);
-    rFont.setSmooth(false);
-    rText = sf::Text(rFont, "", 32);
-
     unsigned int mWidth = sf::VideoMode::getDesktopMode().size.x;
     if (mWidth > 2560) {
         width = 2560; height = 1440;
@@ -24,6 +20,13 @@ Game::Game() {
 
     keyPressed = {{"left", false}, {"right", false}, {"up", false}, {"down", false}};
     clock = sf::Clock();
+
+    Res::loadTexture();
+    Res::loadSprite();
+
+    rFont = *(Res::neodgm);
+    rFont.setSmooth(false);
+    rText = sf::Text(rFont, "", 32);
 }
 
 // Loading game state
@@ -39,7 +42,7 @@ void Game::run() {
     while (running) {
         frameCurrent = clock.getElapsedTime().asSeconds();
         delta = frameCurrent - framePrevious;
-        framePrevious = clock.getElapsedTime().asSeconds();
+        framePrevious = frameCurrent;
         handleScene();
         handleInput();
         window.display();
@@ -55,7 +58,7 @@ void Game::handleScene() {
 void Game::handleInput() {
     while (const std::optional event = window.pollEvent()) {
         if (event->is<sf::Event::Closed>()) {
-            window.close();
+            running = false;
         }
         if (const auto* key = event->getIf<sf::Event::KeyPressed>()) {
             int k = int(key->scancode);

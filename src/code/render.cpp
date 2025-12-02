@@ -15,3 +15,8 @@ void Render::renderRect(sf::RenderTarget& rt, sf::RectangleShape& rs, std::vecto
     rs.setSize({rect[2], rect[3]});
     rt.draw(rs);
 }
+
+void Render::renderSprite(sf::RenderTarget& rt, sf::Sprite& s, std::vector<float> pos) {
+    s.setPosition({pos[0], pos[1]});
+    rt.draw(s);
+}

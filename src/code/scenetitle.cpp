@@ -5,7 +5,7 @@
 #include <game.hpp>
 
 SceneTitle::SceneTitle(shared_ptr<Game> game) : Scene(game) {
-
+    selectedTitle = 0;
 }
 
 void SceneTitle::loop(shared_ptr<Game> game) {
@@ -26,18 +26,31 @@ void SceneTitle::render(shared_ptr<Game> game) {
     Render::renderText(game->window, game->rText, UI::UITitle["text_erase"], "Erase Data");
     Render::renderRect(game->window, game->rRect, UI::UITitle["button_quit"], 2);
     Render::renderText(game->window, game->rText, UI::UITitle["text_quit"], "Quit Game");
+    Render::renderSprite(game->window, Res::sprite->at("arrow"), {UI::UITitle["arrow"][selectedTitle * 2], UI::UITitle["arrow"][selectedTitle * 2 + 1]});
 }
 
 void SceneTitle::mouseUp(shared_ptr<Game> game, sf::Vector2f pos, int button) {
     if (button == 0) {
-        if (Func::pointInsideRectUI(pos, UI::UITitle["button_quit"])) {
+        if (Func::pointInsideRectUI(pos, UI::UITitle["button_start"])) {
+            game->scene = make_shared<SceneField>(game);
+        } else if (Func::pointInsideRectUI(pos, UI::UITitle["button_quit"])) {
             game->running = false;
         }
     }
 }
 
 void SceneTitle::keyDown(shared_ptr<Game> game, int key) {
-
+    if (key == K_UP) {
+        selectedTitle = (selectedTitle + 3) % 4;
+    } else if (key == K_DOWN) {
+        selectedTitle = (selectedTitle + 1) % 4;
+    } else if (key == K_ENTER) {
+        if (selectedTitle == 0) {
+            game->scene = make_shared<SceneField>(game);
+        } else if (selectedTitle == 3) {
+            game->running = false;
+        }
+    }
 }
 
 void SceneTitle::keyUp(shared_ptr<Game> game, int key) {
