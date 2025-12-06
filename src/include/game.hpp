@@ -16,8 +16,9 @@ class Game : public std::enable_shared_from_this<Game> {
         std::unordered_map<std::string, bool> keyPressed = {};
 
         std::string state; bool menu;
-        shared_ptr<Field> field;
         int selectedTitle = 0, selectedMenuField = 0, selectedMenuBattle = 0;
+
+        shared_ptr<Field> field;
         Game();
 
         void init();

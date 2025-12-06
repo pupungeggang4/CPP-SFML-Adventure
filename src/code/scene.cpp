@@ -1,7 +1,7 @@
 #include <scene.hpp>
 #include <game.hpp>
 
-Scene::Scene(shared_ptr<Game> game) {
+Scene::Scene() {
 
 }
 

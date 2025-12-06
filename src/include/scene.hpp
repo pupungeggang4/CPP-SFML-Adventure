@@ -5,7 +5,7 @@ class Game;
 
 class Scene {
     public:
-        Scene(shared_ptr<Game>);
+        Scene();
         virtual void loop(shared_ptr<Game>);
         virtual void render(shared_ptr<Game>);
         virtual void mouseUp(shared_ptr<Game>, sf::Vector2f, int);
@@ -26,6 +26,7 @@ class SceneTitle : public Scene {
 
 class SceneField : public Scene {
     public:
+        int selectedMenu = 0;
         SceneField(shared_ptr<Game>);
         void loop(shared_ptr<Game>) override;
         void render(shared_ptr<Game>) override;

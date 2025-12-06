@@ -12,3 +12,27 @@ std::unordered_map<std::string, std::vector<float>> UI::UITitle = {
     {"text_quit", {180, 420}},
     {"arrow", {80, 160, 80, 240, 80, 320, 80, 400}}
 };
+
+std::unordered_map<std::string, std::vector<float>> UI::UIField = {
+    {"button_menu", {1180, 20, 80, 80}},
+};
+
+std::unordered_map<std::string, std::vector<float>> UI::UIBattle = {
+
+};
+
+std::unordered_map<std::string, std::vector<float>> UI::UIMenuField = {
+    {"rect", {320, 200, 640, 320}},
+    {"text_paused", {340, 220}},
+    {"button_resume", {320, 280, 640, 80}},
+    {"text_resume", {340, 300}},
+    {"button_exit", {320, 360, 640, 80}},
+    {"text_exit", {340, 380}},
+    {"button_quit", {320, 440, 640, 80}},
+    {"text_quit", {340, 460}},
+    {"arrow", {240, 280, 240, 360, 240, 440}}
+};
+
+std::unordered_map<std::string, std::vector<float>> UI::UIMenuBattle = {
+
+};

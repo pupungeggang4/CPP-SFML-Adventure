@@ -4,7 +4,7 @@
 #include <render.hpp>
 #include <game.hpp>
 
-SceneTitle::SceneTitle(shared_ptr<Game> game) : Scene(game) {
+SceneTitle::SceneTitle(shared_ptr<Game> game) {
     selectedTitle = 0;
 }
 

@@ -1,8 +1,10 @@
 #pragma once
 #include <general.hpp>
 
+class Game;
 class Render {
     public:
+        static void renderMenuField(sf::RenderTarget&, shared_ptr<Game>);
         static void renderText(sf::RenderTarget&, sf::Text&, std::vector<float>, sf::String);
         static void renderRect(sf::RenderTarget&, sf::RectangleShape&, std::vector<float>, float);
         static void renderSprite(sf::RenderTarget&, sf::Sprite&, std::vector<float>);

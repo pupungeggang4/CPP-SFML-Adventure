@@ -24,6 +24,6 @@ using std::make_shared;
 #define K_LEFT 87
 #define K_DOWN 88
 #define K_UP 89
-#define K_ESC 37
+#define K_ESCAPE 37
 #define K_ENTER 36
 #define K_SPACE 40
