@@ -8,4 +8,5 @@ class UI {
         static std::unordered_map<std::string, std::vector<float>> UIBattle;
         static std::unordered_map<std::string, std::vector<float>> UIMenuField;
         static std::unordered_map<std::string, std::vector<float>> UIMenuBattle;
+        static std::unordered_map<std::string, std::vector<float>> UIInfoWindow;
 };

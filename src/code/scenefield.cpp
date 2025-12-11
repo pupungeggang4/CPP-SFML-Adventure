@@ -1,5 +1,8 @@
 #include <scene.hpp>
 #include <ui.hpp>
+
+#include <field.hpp>
+
 #include <func.hpp>
 #include <render.hpp>
 #include <game.hpp>
@@ -15,10 +18,12 @@ void SceneField::loop(shared_ptr<Game> game) {
 
 void SceneField::render(shared_ptr<Game> game) {
     game->window.clear(sf::Color::White);
+    game->field->render(game);
+
+    game->window.setView(game->viewUI);
     game->rText.setFillColor(sf::Color::Black);
     game->rText.setCharacterSize(32);
     game->rRect.setOutlineColor(sf::Color::Black);
-
     Render::renderRect(game->window, game->rRect, UI::UIField["button_menu"], 2);
 
     if (game->menu == true) {
